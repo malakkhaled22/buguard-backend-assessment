@@ -55,7 +55,7 @@ docker compose up --build
 
 Protected endpoints require:
 
-X-API-Key: your-buguard-strong-key
+API-Key: your-buguard-strong-key
 
 ## API Documentation
 
