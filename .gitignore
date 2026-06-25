@@ -1,11 +1,10 @@
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 
 # Virtual Environment
 venv/
-
-# Environment Variables
 .env
 
 # Pytest
@@ -14,13 +13,27 @@ venv/
 # VS Code
 .vscode/
 
-# OS
-.DS_Store
-Thumbs.db
+# JetBrains
+.idea/
 
 # Coverage
 .coverage
 htmlcov/
 
+# OS Files
+.DS_Store
+Thumbs.db
+
 # Logs
 *.log
+
+# Environment files
+.env
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# Docker
+postgres_data/
