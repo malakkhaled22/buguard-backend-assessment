@@ -1,0 +1,41 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.env
+
+# Pytest
+.pytest_cache/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Coverage
+.coverage
+htmlcov/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# Docker
+postgres_data/
