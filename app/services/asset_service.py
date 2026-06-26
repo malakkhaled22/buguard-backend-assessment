@@ -3,7 +3,6 @@ from fastapi import HTTPException
 from datetime import UTC, datetime
 
 from app.models import tag
-from app.models import tag
 from app.models.asset import Asset
 from app.models.tag import Tag
 from app.models.relationship import Relationship
@@ -88,16 +87,18 @@ def get_assets(
             Asset.value.ilike(f"%{value}%")
         )
 
-    if sort_by == "last_seen":
-        assets = assets.order_by(
-            Asset.last_seen.desc()
-        )
 
     if tag:
         assets = assets.filter(
             Asset.tags.any(Tag.name == tag)
         )
     
+    
+    if sort_by == "last_seen":
+        assets = assets.order_by(
+            Asset.last_seen.desc()
+        )
+
 
     elif sort_by == "first_seen":
         assets = assets.order_by(

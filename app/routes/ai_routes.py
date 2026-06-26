@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
@@ -25,7 +25,10 @@ def get_risk_assessment(
     )
 
     if not asset:
-        return {"message": "Asset not found"}
+        raise HTTPException(
+            status_code=404, 
+            detail="Asset not found"
+        )
 
     result = assess_asset_risk(asset)
 

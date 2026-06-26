@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, DateTime, JSON, UniqueConstraint
 from app.database import Base
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timezone
 import uuid
 
 from app.enums.asset_enum import AssetType, AssetStatus
@@ -39,7 +39,7 @@ class Asset(Base):
 
     first_seen = Column(
         DateTime,
-        default=datetime.now(UTC)
+        default=lambda: datetime.now(timezone.utc)
     )
 
     last_seen = Column(

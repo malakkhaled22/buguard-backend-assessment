@@ -1,11 +1,12 @@
 from pydantic import BaseModel, ConfigDict
 from typing import (Optional, List)
 
+from app.enums.asset_enum import AssetType
 from app.schemas.tag_schema import TagResponse
 
 
 class AssetCreate(BaseModel):
-    type: str
+    type: AssetType
     value: str
     source: Optional[str] = None
     tags: List[str] = []
@@ -14,7 +15,7 @@ class AssetCreate(BaseModel):
 
 class AssetResponse(BaseModel):
     id: str
-    type: str
+    type: AssetType
     value: str
     status: str
     source: str | None = None
@@ -28,7 +29,7 @@ class AssetResponse(BaseModel):
     )
 
 class AssetUpdate(BaseModel):
-    type: str
+    type: AssetType
     value: str
     source: str | None = None
     status: str | None = None

@@ -26,7 +26,7 @@ services:
       - "8000:8000"
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/asset_management_db
-      API_KEY: buguard-internship-key
-
+      API_KEY: your-buguard-internship-key
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
 volumes:
   postgres_data:
